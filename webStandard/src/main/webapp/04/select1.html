@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body {
+		background-color: #FFE08C;
+	}
+	form fieldset {
+		margin-bottom: 20px;
+	}
+	form legend {
+		font-size: 15px;
+		font-weight: 600;
+	}
+	.reg {
+		font-size: 14px;
+		width: 110px;
+		color: #339900;
+		font-weight: bold;
+		float: left;
+		text-align: right;
+		margin-right: 10px;
+	}
+	form ul li {
+		list-style: none;	
+		margin: 15px 10px 5px; /* 1개 상하좌우, 2개 상하 좌우,
+								  3개 상 우=좌 하, 4개 상 우 하 좌(시계방향) */
+		font-size: 14px;
+	}
+</style>
+</head>
+<body>
+	<h1>여름방학 특강 신청</h1>
+	<form action="">
+		<fieldset>
+				<!-- <fieldset>: 태그 사이의 폼들을 하나의 영역으로 묶고 외곽선을 그려주고 
+				     <legend>: <fieldset>태그로 묶은 그룹에 제목을 붙여준다-->
+			<legend>수강 신청인</legend>
+			<ul>
+				<li> <!-- . class: 주로 design을 위해 묶어주기 
+						  # id: 주로 어떤 값을 받아서 넘겨주거나 변경(design을 위한것도 가능) -->
+					<label class="reg" for="id">학번</label>
+					<input type="text" id="id">
+				</li>
+				<li>
+					<label class="reg" for="name">이름</label>
+					<input type="text" id="name">
+				</li>
+				<li>
+					<label class="reg">***학과***</label>
+					<select id="class" name="class">
+					<!-- <select>: 드롭다운 목록을 만든다.
+					     <option>: 드롭다운 목록에 표시되는 옵션들을 지정
+					     value: 옵션을 선택했을때 서버로 넘겨질 값 지정
+					     selected: 화면에 표시될 때 기본으로 선택되어 있는 옵션 지정-->
+						<!-- value 실제값, 보여지는것은 학과명 -->
+						<option value="archi">건축공학과</option>
+						<option value="mechanic">기계공학과</option>
+						<option value="indust">산업공학과</option>
+						<option value="elec">전기전자공학과</option>
+						<option value="computer" selected>컴퓨터공학과</option>
+						<option value="chmical">화학공학과</option>
+					</select>
+				</li>
+			</ul>
+		</fieldset>
+	</form>
+</body>
+</html>

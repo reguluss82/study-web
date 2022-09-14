@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body {
+		background-color: #FFE08C;
+	}
+	form fieldset {
+		margin-bottom: 25px;
+		font-weight: 600;
+	}
+	form label.reg {
+		font-size: 14px;
+		color: #390;
+		font-weight: bold;
+		width: 110px;
+		float: left;
+		text-align: right;
+		margin-right: 10px;
+		
+	}
+	form {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+	<form action="">
+		<fieldset>
+			<legend>신청 과목</legend>
+			<p>이 달에 신청할 과목을 선택하세요 (1과목만 가능)</p>
+			<!-- radio: 여러 항목 중 원하는 항목을 선택할 때 사용, 한 개만 선택하도록 할 경우 -->
+			<label class="reg"> <input type="radio" name="subject" value="speaking">회화 </label>
+			<label> <input type="radio" name="subject" value="grammar">문법 </label>
+			<label> <input type="radio" name="subject" value="writing">작문 </label>
+			<!-- 속성: name: 라디오 버튼이나 체크박스가 여러 개 있을 경우, 서버의 폼 프로그램에서 라디오 버튼이나 체크박스를 구분하기 위해 이름을 지정
+			           value: 선택한 라디오 버튼이나 체크박스를 서버로 알려 줄 때 넘길 값을 지정, 영문이거나 숫자여야 하며 필수 속성
+			           checked: 화면에 기본으로 선택해 놓을 항목 지정 -->
+		</fieldset>
+		<fieldset>
+			<legend>메일링</legend>
+			<p>메일로 받고 싶은 뉴스 주제를 선택해 주세요 (복수 선택 가능)</p>
+			<!-- checkbox: 여러 항목 중 원하는 항목을 선택할 때 사용, 두 개 이상 여러가지를 선택하도록 할 경우 -->
+			<label> <input type="checkbox" name="mailing1" value="news">해외 단신 </label>
+			<label> <input type="checkbox" name="mailing2" value="dialog">5분 회화 </label>
+			<label> <input type="checkbox" name="mailing3" value="pops">모닝팝스 </label>
+		</fieldset>
+	</form>
+</body>
+</html>

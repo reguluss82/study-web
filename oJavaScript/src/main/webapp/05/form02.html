@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--
+1. id 속성 (id="title")
+- document.all.id.value
+- id.value
+- document.getElementById("폼 id").value
+- id 속성은 page 안에서 중복으로 사용할 수 없으며, 주로 JavaScript에서 다루기 위해 지정한다.
+- name 속성으로도 JavaScript를 통해 속성이나 값을 변경할 수 있는데,
+  중복 값을 가질 수 있어 id 속성의 값으로 주로 접근한다.
+- document.getElementById(id)를 통해서 해당 엘리먼트 Object를 가져올 수 있다.
+- id 속성으로 설정된 값은 Server단의 파라미터값으로 넘어가지 않기 때문에, Server단에서 접근이 불가능하다.
+
+2. name 속성 (name="title")
+- document.폼 객체명.폼 원소명.value
+- document.getElementsByName("name")
+- name 속성은 page 영역에서 중복되어 사용이 가능하며,
+  action에 해당하는 페이지에 전달할 수 있는 파라미터로 사용한다.
+- GET/POST 방식으로 값을 전달하고 싶은 tag에 사용한다.
+  예를 들어 Form 객체(input, radio, checkbox, ...)에서 전송되는 파라미터의 Key 값으로 사용한다.
+- 태그의 name 값이 키(Key)로 해서 값(Value)가 전송된다.
+  즉, request에 값이 전달될 때 Map과 마찬가지로 Key와 Value 쌍의 형식으로 데이터가 저장된다.
+- Server단에서 request.getParameter(parameterName) 으로 값을 가져온다.
+-->
+<script type="text/javascript">
+	function chk() {
+		if (!frm.name.value) {
+			alert("이름좀 넣어줄래");
+			frm.name.focus();
+			return;
+		}
+		if (frm.age.value == "") {
+			alert("나이좀 넣어줄래");
+			frm.age.focus();
+			return;
+		}
+		if (isNaN(frm.age.value)) {
+			alert("나이는 숫자로 넣어줄래");
+			frm.age.focus();
+			frm.age.value = "";
+			return;
+		}
+		var addr = document.getElementById("addr");
+		if (addr.value.length == 0) {
+			alert("주소좀 넣어줄래");
+			addr.focus();
+			return;
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>form01</h1>
+	<h2>입력창</h2>
+	<form action="" name="frm">
+		이름 : <input type="text" name="name"> <p>
+		나이 : <input type="text" name="age"> <p>
+		주소 : <input type="text" name="addr" id="addr"> <p>
+		<input type="button" value="확인" onclick="chk()"> <p>
+	</form>
+</body>
+</html>

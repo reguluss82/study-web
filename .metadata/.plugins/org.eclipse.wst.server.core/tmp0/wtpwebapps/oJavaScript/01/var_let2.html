@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	a = 7;
+	b = "대박";
+	var c = 1.56;
+	var d = '5분';
+	let e = 'eee분';
+	document.write("정수a : " + a + "<p>");
+	document.write("문자b : " + b + "<br>");
+	document.write("실수c : " + c + "<br>");
+	document.write("문자d : " + d + "<br>");
+	document.write("문자e : " + e + "<br>");
+	function varTest() {
+		alert('varTest Click');
+		var x = 1;
+		if (true) {
+			var x = 2; // 같은 변수!
+			alert('varTest1 x->' + x); // 2
+		}
+		alert('varTest2 x->' + x); // 2 <- 함수가 아닌 곳(if)에서 var 키워드를 이용해 a를 선언했기 때문에 (함수 내)전역 변수로 취급
+		/* var 키워드로 선언된 변수는 
+		오로지 함수의 코드 블록만을 지역 스코프로 인정한다.
+		이를 함수 레벨 스코프라 한다. */
+	}
+	function letTest() {
+		alert('letTest Click');
+		let x = 1;
+		if (true) {
+			let x = 2;
+			alert('letTest1 x->' + x); // 2
+		}
+		alert('letTest2 x->' + x); // 1 <- 전역에 있는 x값이 출력
+		/* let, const 키워드로 선언한 변수는
+		모두 코드 블록(ex. 함수, if, for, while, try/catch 문 등)을
+		지역 스코프로 인정하는 블록 레벨 스코프를 따른다. */
+	}
+/* 	기본적으로 변수의 스코프는 최대한 좁게 만드는 것을 권장한다.
+	따라서, var 키워드 보다는 let과 const 키워드를 사용하며,
+	변경하지 않는 값(상수)이라면 let 보다는 const 키워드를 사용하는 것이 안전하다. */
+</script>
+</head>
+<body>
+	<h1>Var let2</h1>
+	<button onclick="varTest()">varTest</button>
+	<button onclick="letTest()">letTest</button>
+</body>
+</html>

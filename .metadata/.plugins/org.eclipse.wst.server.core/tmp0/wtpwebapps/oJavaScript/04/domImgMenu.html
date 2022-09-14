@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--
+그림 파일의 경로를 알려주는 src 속성
+1. HTML의 <IMG> 태그에 그림 파일을 설정할 때 src 속성을 사용.
+2. src 속성에는 그림파일이 저장되어있는 경로에 파일이름을 연결하여 지정.
+3. 반드시 이중따옴표로 묶어서 문자열형태로 기술.
+4. 특별히 경로명을 적어주지 않는 경우에는 그림 파일을 불러오는 HTML 파일과
+   그림 파일이 동일한 폴더에 저장되어 있기 때문.
+5. 자바스크립트에서는 그림 파일의 경로를 알려주는 images 객체의 src 속성 사용.
+6. 이 속성은 그림 파일의 경로명을 알려주기도 하지맊, src 속성에 특정 파일이름을
+   대입하면 웹 페이지의 그림이 대입한 파일의 그림으로 변경됨.
+	- document.images[n].src
+	- document.이미지객체.src
+-->
+<script type="text/javascript">
+	overImg = new Array();
+	outImg  = new Array();
+	for (var i = 0; i < 4; i++) {//변경할 이미지 배열 생성
+		overImg[i] ="../images/" + i + "over.jpg"
+		outImg[i]  ="../images/" + i + "out.jpg"
+	}
+	function ov(num) {//onmouseover시 실행될 함수
+		document.images[num].src=overImg[num];
+	}
+	function ot(num) {//onmouseout시 실행될 함수
+		document.images[num].src=outImg[num];
+	}
+</script>
+</head>
+<body>
+	<h1>dom Image Menu 바꾸기</h1>
+	<img src="../images/0out.jpg" onmouseover="ov(0)" onmouseout="ot(0)"><p><!--  onmouseover시 ov(0)실행, onmouseout시 ot(0)실행 -->
+	<img src="../images/1out.jpg" onmouseover="ov(1)" onmouseout="ot(1)"><p>
+	<img src="../images/2out.jpg" onmouseover="ov(2)" onmouseout="ot(2)"><p>
+	<img src="../images/3out.jpg" onmouseover="ov(3)" onmouseout="ot(3)">
+</body>
+</html>

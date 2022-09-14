@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h1 { /* 태그 선택자 특정 태그를 사용한 요소에 스타일 적용 */
+		color: blue;
+	}
+	#habor { /* id 선택자 #아이디명 : 특정 id에 속한 요소에 스타일 적용 */
+		border: 1px solid gray;
+		padding: 10px;
+		color: green;
+	}
+	.heading { /* class 선택자 .클래스명 : 특정 클래스에 속한 요소에 스타일 적용 */
+		color: red;
+	}
+	/* 적용 범위에 따라 우선순위를 정함
+	   스타일 범위가 좁을수록 우선순위가 높다
+	   우선순위 1.인라인스타일 2.id스타일 3.클래스스타일 4.태그스타일 */
+	/* 전체선택자 * : 스타일을 모든 요소에 적용 */
+</style>
+</head>
+<body>
+	<h1 class="heading" id="habor">세계 3대 미항</h1>
+	<img alt="브라질 리우데자네이루" src="images/rio.png">
+	<p>시드니(Sydney), 호주</p>
+	<p>리우데자네이루(Rio de Janeiro), 브라질</p>
+	<p>나폴리(Naples), 이탈리아</p>
+</body>
+</html>

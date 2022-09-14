@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+	//	if (frm.id.value.length == 0) {
+		if (frm.id.value == "") { // name frm이고 id인 요소의 value
+			alert("이름 부탁해요^^");
+			frm.id.focus(); // name frm이고 id인 요소에 포인터가 자동으로 간다
+			return;
+		}
+		if (frm.pass.value == "") { // name frm이고  pass인 요소의 value
+			alert("password 부탁해요^^");
+			frm.pass.focus(); // name frm이고 pass인 요소에 포인터가 자동으로 간다
+			return;
+		}
+	}
+</script>
+</head>
+<body>
+	<h2>로그인</h2>
+	<form action="" name="frm">
+		이름 : <input type="text"     name="id"><p>
+		암호 : <input type="password" name="pass"><p>
+		<input type="button" value="확인" onclick="chk()"> <!-- 클릭시 chk()함수 실행 -->
+	</form>
+</body>
+</html>

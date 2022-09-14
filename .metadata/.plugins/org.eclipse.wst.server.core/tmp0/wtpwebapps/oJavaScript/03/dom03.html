@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chgColor() {
+		// name 속성값이 "first"인 모든 요소를 선택함. <- 객체 배열로 생성된다.
+		var selFirstItem = document.getElementsByName("first")
+		// 선택된 모든 요소의 텍스트 색상을 변경함.
+ 		for (var i = 0; i < selFirstItem.length; i++) {
+			selFirstItem.item(i).style.color = "red";
+			/* selFirstItem[i].style.color = "red"; */
+ 		}
+/* 		for (var Item of selFirstItem) {
+			Item.style.color = "red";
+		} */
+	};
+</script>
+</head>
+<body>
+	<h1>dom03</h1>
+	<h4>name 속성을 이용한 선택</h4>
+	<p name="first">첫 번쨰 단락이에요!</p>
+	<ul> <!-- name은 여러개 있을때, id는 하나있을때 많이 사용 -->
+		<li name="first">첫 번째 아이템이에요!</li>
+		<li>두 번째 아이템이에요!</li>
+		<li name="first">세 번째 아이템이에요!</li>
+		<li>네 번째 아이템이에요!</li>
+		<li>다섯 번째 아이템이에요!</li>
+	</ul>
+	<button onclick="chgColor()">first색상 Red변경</button>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div.container {
+		width: 600px;
+		margin: 0 auto; /* auto: 가로 중앙에 배치, 좌우여백은 균등하게 배분 
+		                   -> 0 auto 위아래 여백없이 가로 중앙에 배치 */
+	}
+	ul {
+		list-style-type: none;
+	}
+	label.title { /* label중 class가 title */
+		font-weight: bold;
+		width: 80px;
+		float: left;
+	}
+	div.centered {
+		text-align: center;
+	}
+	fieldset {
+		margin: 15px 10px;
+	}
+	fieldset legend {
+		font-weight: bold;
+		font-size: 18px;
+		color: purple;
+	}
+	ul li { /* ul의 자손 li */
+		margin-bottom: 10px;
+	}
+</style>
+</head>
+<body><!-- <div>: 레이아웃을 나누는데 주로 쓰임, 특별한 기능을 갖고 있지는 않고,
+                   가상의 레이아웃을 설계하는데 쓰이며, 주로 CSS와 연동하여 쓰인다. -->
+	<div class="container">
+		<h1>상품 주문서</h1>
+		<form action="kkk.jsp">
+			<fieldset>
+				<legend>개인 정보</legend>
+				<ul>
+					<li>
+						<label for="uname" class="title">이름</label>
+						<input type="text" id="uname" placeholder="여백없이 입력" required>
+						<!-- required: 필수적으로 입력해야 하는 내용에 지정 -->
+					</li>
+					<li><!-- placeholder: 입력란에 표시되는 힌트내용, 입력시 사라짐 -->
+						<label for="tel1" class="title">연락처</label>
+						<input type="tel" id="tel1" placeholder="연락가능한 번호">
+					</li>
+				</ul>
+			</fieldset>
+			<fieldset>
+				<legend>배송지 정보</legend>
+				<ul>
+					<li><!-- 여러 폼 요소들을 class를 이용해 묶음 -->
+						<label for="addr" class="title">주소</label>
+						<input type="text" id="addr" placeholder="배송지 주소" required>
+					</li>
+					<li>
+						<label for="tel2" class="title">전화번호</label>
+						<input type="tel" id="tel2" placeholder="배송 수취인 전화번호" required>
+					</li>
+					<li>
+						<label for="comment" class="title">메 모</label>
+						<textarea cols="40" rows="3" id="comment" placeholder="배송 관련 메모"></textarea>
+						<!-- <textarea>: 여러 줄 입력하는 텍스트 영역 만든다
+						     cols: 텍스트 영역의 가로 너비를 문자단위로 지정
+						     rows: 텍스트 영역의 세로 길이를 줄 단위로 지정,
+						          지정한 숫자보다 줄 개수가 많아지면 스크롤막대가 생김 -->
+					</li>
+				</ul>
+			</fieldset>
+			<fieldset>
+				<legend>주문 정보</legend>
+				<ul>
+					<li><!-- checkbox: 여러 항목 중 원하는 항목을 선택할때 사용, 다중선택가능
+							  radio: 여러 항목 중 원하는 항목을 선택할때 사용, 다중선택불가능 -->
+						<label><input type="checkbox">과테말라 안티구아 (100g) </label>
+						<label><input type="number" value="0" min="0" max="5">개</label>
+						<!-- 해당 필드의 최소값 최대값 -->
+					</li>
+					<li>
+						<label><input type="checkbox">인도네시아 만델링 (100g) </label>
+						<label><input type="number" value="0" min="0" max="5">개</label>
+					</li>
+					<li>
+						<label><input type="checkbox">탐라는도다(블렌딩) (100g) </label>
+						<label><input type="number" value="0" min="0" max="5">개</label>
+					</li>
+				</ul>
+			</fieldset>
+		</form>
+		<div class="centered">
+			<input type="submit" value="주문하기">
+			<input type="reset" value="다시 작성">
+		</div>
+	</div>
+</body>
+</html>

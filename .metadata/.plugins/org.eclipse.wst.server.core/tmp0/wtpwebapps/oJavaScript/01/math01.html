@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/* 	Math.min()
+	인수로 전달받은 값 중에서 가장 작은 수를 반환
+	인수가 전달되지 않으면 Infinity를 반환하며, 
+	인수 중에 비교할 수 없는 값이 포함되어 있으면 NaN을 반환 */
+	console.log(Math.min(1 , 10 , -100 , -10 , 1000 , 0));
+	console.log(Math.min()); // Infinity 인수전달 안 될시
+		// NaN 인수 중에 비교할 수 없는 값이 포함
+	console.log(Math.min(1 , 10 , -100 , -10 , "문자열" , 0)); 
+
+	/* 	Math.max()
+	인수로 전달받은 값 중에서 가장 큰수를 반환
+	인수가 전달되지 않으면 -Infinity를 반환하며,
+	인수 중에 비교할 수 없는 값이 포함되어 있으면 NaN을 반환 */
+	console.log(Math.max(1 , 10 , -100 , -10 , 1000 , 0)); 
+	console.log(Math.max()); // Infinity 인수전달 안 될시
+		// NaN 인수 중에 비교할 수 없는 값이 포함
+	console.log(Math.max(1 , 10 , -100 , -10 , "문자열" , 0)); 
+	
+	/* 	Math.round()
+	인수로 전달받은 값을
+	소수점 첫 번째 자리에서 반올림하여 그 결괏값을 반환*/
+	console.log(Math.round(10.43));		
+	console.log(Math.round(10.78));		
+	console.log(Math.round(-10.51));	
+
+	/* 	Math.floor() 
+	인수로 전달받은 값과
+	같거나 작은 수중에서 가장 큰 정수를 반환 */
+	console.log(Math.floor(10.43));		
+	console.log(Math.floor(10.78));		
+	console.log(Math.floor(-10.51));	
+
+	/* 	Math.ceil() 
+	인수로 전달받은 값과
+	같거나 큰 수 중에서 가장 작은 정수를 반환 */
+	console.log(Math.ceil(10.43));		
+	console.log(Math.ceil(10.78));		
+	console.log(Math.ceil(-10.51));		
+</script>
+</head>
+<body>
+	<h1>math</h1>
+	<h4>
+		Math 객체는 수학에서 자주 사용하는 상수와 함수들을
+		미리 구현해 놓은 자바스크립트 표준 내장 객체
+	</h4>
+</body>
+</html>

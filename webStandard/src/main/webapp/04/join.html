@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	ul {
+		list-style: none;
+	}
+	li {
+		margin: 10px;
+	}
+	label {
+		width: 120px;
+		text-align: left;
+		float: left;
+	}
+</style>
+</head>
+<body>
+	<h1>회원 가입을 환영합니다</h1>
+	<form action="">
+		<ul><!-- <input>: 서버에 보낼 데이터 입력부분을 만든다.
+			type: 여러 폼 요소 형식 내용 구분(text, search, tel, password 등)
+			id: 동일한 폼 요소들을 id로 구분
+			-->
+			<li><label>아이디:</label><input type="text" id="user_id" size="10" minlength="4" maxlength="15">
+				<small style="color: red;"> 4~15자리 이내의 영문과 숫자</small></li>
+				<!-- size: 필드에서 몇글자가지 보이게할지 지정
+					 minlength: 최소 몇글자 이상 입력해야하는지 지정
+					 maxlength: 최대 몇글자 까지 입력해야하는지 지정 -->
+				<!-- <small>: 글자 크기가 작은 텍스트를 정의할 때 사용, 일반 글씨보다 2point 정도 작다-->
+			<li><label>이메일:</label><input type="email" id="user_email"></li>
+			<li><label>비밀번호:</label><input type="password" id="user_pwd"></li>
+			<li><label>비밀번호 확인:</label><input type="password" id="check_pwd"></li>
+			<li><input type="submit" value="회원가입"></li>
+			<!-- submit: 폼에 입력한 정보를 서버로 전송 /reset-->
+		</ul>
+	</form>
+</body>
+</html>

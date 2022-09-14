@@ -1,0 +1,27 @@
+<%@page import="java.sql.CallableStatement"%>
+<%@page import="javax.naming.InitialContext"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="javax.sql.DataSource"%>
+<%@page import="javax.naming.Context"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" errorPage="../dBError.jsp"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<% 
+	int empno = Integer.parseInt(request.getParameter("empno"));
+	System.out.println("empno-> + empno");
+	Context    ctx  = new InitialContext();
+	DataSource ds   = (DataSource)ctx.lookup("java:comp/env/jdbc/OracleDB");
+	Connection conn = ds.getConnection();
+	// Procedure Call
+	String sql = "{call Emp_Info3(? , ?)}";
+	CallableStatement cs = conn.prepareCall(sql);
+	// 급여
+%>
+</body>
+</html>

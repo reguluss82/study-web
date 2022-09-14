@@ -1,0 +1,9 @@
+package och10;
+//DTO --> Data 전달하는 객체 단위(일반적 Table단위)
+public class Dept {
+	private int deptno;
+	private String dname;
+	private String loc;
+
+	
+}

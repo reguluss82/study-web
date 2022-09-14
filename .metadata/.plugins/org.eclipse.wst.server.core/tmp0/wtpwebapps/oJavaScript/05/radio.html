@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		var mStr = "좋아하는 영화는 ?\n";
+		var sStr = "좋아하는 노래는 ?\n";
+		for (var i = 0; i < frm.movie.length; i++) { //name이 movie인 요소 배열 index
+			if (frm.movie[i].checked) { 
+				mStr += frm.movie[i].value + "\n";
+				break;
+			}
+		}
+		for (var j = 0; j < frm.song.length; j++) { //name이 song인 요소 배열 index
+			if (frm.song[j].checked) { 
+				sStr += frm.song[j].value + "\n";
+				break;
+			}
+		}
+		alert(mStr + sStr);
+	}
+</script>
+</head>
+<body>
+	<form action="" name="frm"> <!-- radio는 하나만 선택 -->
+		<h2>다음에서 선택</h2>
+		1. 가장 좋아하는 영화 한 개만을 선택. <br>
+		<input type="radio" name="movie" value="원더우먼"       id="m1">
+		원더우먼
+		<input type="radio" name="movie" value="악녀"           id="m2">
+		<label for="m2">악녀</label>
+		<input type="radio" name="movie" value="쿵푸 팬더"      id="m3">
+		<label for="m3">쿵푸 팬더</label>
+		<hr>
+		2. 좋아하는 노래를 선택. <br>
+		<input type="radio" name="song"  value="세월이 가면"    id="s1">
+		세월이 가면
+		<input type="radio" name="song"  value="미스터미스터리" id="s2">
+		<label for="s2">미스터미스터리</label>
+		<input type="radio" name="song"  value="스티커"         id="s3">
+		<label for="s3">스티커</label>
+		<input type="radio" name="song"  value="신데렐라"       id="s4">
+		<label for="s4">신데렐라</label>
+		<hr>
+		<input type="button" value="확인" onclick="chk()">
+	</form>
+</body>
+</html>

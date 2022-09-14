@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//           0		 1			2		   3		 4		  5		   6
+	var color = ["red" , "orange" , "yellow" , "green" , "blue" , "navy" , "violet"];
+	function chk(num) {
+		/* document.fgColor
+		document 객체의 fgColor 속성에 원하는 웹페이지 글자 색상을 지정 */
+/* 		document.fgColor = color[num]; */
+		document.body.style.color = color[num];
+		if(num == 0) document.bgColor = color[6]; // num이 0인 경우 -1 해줄수 없으므로 if문 사용
+		else         document.bgColor = color[num-1];
+	}
+</script>
+</head>
+<body bgcolor="black">
+	<h1>dom 색상 바꾸기 FgColor</h1>
+	<table border="1" width="200" height="80">
+		<tr>
+			<td bgcolor="red"    onmouseover="chk(0)"></td>
+			<td bgcolor="orange" onmouseover="chk(1)"></td>
+			<td bgcolor="yellow" onmouseover="chk(2)"></td>
+			<td bgcolor="green"  onmouseover="chk(3)"></td>
+			<td bgcolor="blue"   onmouseover="chk(4)"></td>
+			<td bgcolor="navy"   onmouseover="chk(5)"></td>
+			<td bgcolor="violet" onmouseover="chk(6)"></td>
+		</tr>
+	</table>
+
+</body>
+</html>
+
+<!-- document.fgColor 는 DOM 레벨 2 HTML에서 더 이상 사용되지 않습니다.
+일부 브라우저는 여전히 이를 지원할 수 있지만 관련 웹 표준에서 이미 제거되었거나
+삭제 과정에 있거나 호환성 목적으로만 유지될 수 있습니다.
+권장되는 대안은 CSS 속성 color (예 : document.body.style.color = "red" ). -->

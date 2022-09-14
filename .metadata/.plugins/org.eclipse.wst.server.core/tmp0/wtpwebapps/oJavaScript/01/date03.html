@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//setFullYear 연도 지정, setFullYear(yearValue[, monthValue[, dayValue]])
+	//setMonth    월   지정
+	//setDate     날짜 지정, 초과 입력하는 경우 초과되는 일수 추가
+	var date1 = new Date();
+	var date2 = new Date();
+	date1.setFullYear(2019 , 1 , 19); // 자바스크립트에서 2월은 1
+	document.write("date1는 " + date1 + "<p>");
+	date2.setMonth(7);
+	date2.setDate(10);
+	document.write("date2는 " + date2 + "<p>");
+	date2.setDate(50);
+	document.write("날짜 초과시 date2는 " + date2 + "<p>"); //날짜 초과시 초과되는 일수 추가
+</script>
+</head>
+<body>
+	<h1>Date Setting</h1>
+</body>
+</html>

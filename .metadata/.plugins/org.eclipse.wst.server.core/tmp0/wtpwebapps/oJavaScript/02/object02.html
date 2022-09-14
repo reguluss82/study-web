@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var person = {
+			name    : "홍길동" ,	// 이름 프로퍼티를 정의함
+			birthday: "030219" , 	// 생년월일 프로퍼티를 정의함
+			pId     : "1234567" ,	// 개인 id 프로퍼티를 정의함
+			fullId  : function() {	// 생년월일과 개인 id를 합쳐서 주민번호 반환, 프로퍼티에 함수가능
+				return this.birthday + this.pId;
+			}
+	};
+	document.write("person.name-->"     + person.name     + "<p>");
+	document.write("person.fullId()-->" + person.fullId() + "<p>");
+</script>
+</head>
+<body>
+	<h1>object02</h1>
+</body>
+</html>

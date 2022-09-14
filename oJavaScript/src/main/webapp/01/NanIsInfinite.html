@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 변수에 숫자 할당
+	var number1 = 1 / 0;	// Infinity
+	var number2 = -1 / 0;	// -Infinity
+	var number3 = 1;
+	var number4 = "1";
+	var number5 = 0 / 0;
+	var number6 = '123*456';
+	var number7 = '123.456';
+	var number8 = '';
+	var number9 = ' ';
+	
+	/* isFinite(숫자)
+	함수 유한한 수인지를 판단하는 함수
+	유한수인 경우 true를 리턴하고,
+	아니면 false를 리턴해주는 함수 */
+	console.log(isFinite(number1));	// false
+	console.log(isFinite(number2));	// false
+	console.log(isFinite(number3));	// true
+	console.log(isFinite(number4));	// true
+	
+	/* isNaN(숫자)
+	주어진 데이터가 숫자인지를 판단해서
+	숫자이면 false를 리턴하고
+	아니면 true를 리턴해주는 함수 */
+	console.log(isNaN(number4));	// false
+	console.log(isNaN(number5));	// true
+	console.log(isNaN(number6));	// true
+	console.log(isNaN(number7));	// false
+	console.log(isNaN(number8));	// false 빈문자 0
+	console.log(isNaN(number9));	// false 공백 0
+	console.log(isNaN(NaN));		// true
+	console.log(NaN);				// NaN
+</script>
+</head>
+<body>
+	<h1>NaN Isfinite</h1>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		if (!frm.num.value) {
+			alert("입력값이 없습니다.")
+			frm.num.focus();
+			return false;
+		}
+		if (isNaN(frm.num.value)) {
+			alert("숫자로 입력해주세요.")
+			frm.num.value = ""; //잘못입력된 값 clear
+			frm.num.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<h1>숫자를 입력하세요</h1>
+	<!-- action 속성은 폼 데이터(form data)를 서버로 보낼 때 해당 데이터가 도착할 URL을 명시 -->
+	<!-- method 속성은 폼 데이터(form data)가 서버로 제출될 때 사용되는 HTTP 메소드를 명시 -->
+	<!-- <form action="Add3" name="frm" method="get" onsubmit="return chk()"> -->
+	<form action="Add3" name="frm" method="post" onsubmit="return chk()">
+		숫자 :
+		<input type="text" name="num"><p>
+		위치 :
+		<input type="text" name="loc"><p>
+		<input type="submit" value="확인">
+	</form>
+</body>
+</html>

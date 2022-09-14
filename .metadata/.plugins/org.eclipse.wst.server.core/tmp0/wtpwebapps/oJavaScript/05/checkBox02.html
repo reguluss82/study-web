@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		var str = "좋아하는 영화는 ?\n";
+		for (var i = 0; i < frm.movie.length; i++) { // name이 같은 여러요소들이 배열로 잡힌다.
+			if (frm.movie[i].checked) str += frm.movie[i].value + "\n";  // += 값 누적시킨다
+		}
+		alert(str);
+	}
+</script>
+</head>
+<body>
+	<h2>좋아하는 영화를 선택하셈</h2> //checkbox 중복선택가능
+	<form action="" name="frm">                           <!-- value 실제 넘어가는 파라미터 값 -->
+			리미트 <input type="checkbox" name="movie" id="m1" value="리미트"> <!-- label없어도 모양은 같다 -->
+			<label for="m2">한산</label>                  
+			<input type="checkbox"        name="movie" id="m2" value="한산">
+			<label for="m3">Hunt</label>                  
+			<input type="checkbox"        name="movie" id="m3" value="Hunt">
+			<input type="button" value="확인" onclick="chk()">
+	</form>
+</body>
+</html>

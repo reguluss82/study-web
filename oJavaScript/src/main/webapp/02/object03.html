@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 자바스크립트는 객체 생성이 완료된 후에도,
+	프로퍼티나 메서드를 추가할 수 있다. */
+
+	var man = {name:'김준수' , age: 38 , addr: "드라큐라"};
+	for(var key in man)
+		document.write("1." + key + ":" + man[key] + "<br>");
+	// 2. Append
+	man.phone = "01022223333"; //phone 프로퍼티 추가
+	for(var key in man)
+		document.write("2." + key + ":" + man[key] + "<br>");
+	// 3. Delete
+	delete(man.addr); //delete연산자 프로퍼티 제거
+	for(var key in man)
+		document.write("3." + key + ":" + man[key] + "<br>");
+</script>
+</head>
+<body>
+	<h1>object03</h1>
+</body>
+</html>

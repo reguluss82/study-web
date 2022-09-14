@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var a = parseInt(prompt("1~7사이 숫자를 입력하세요" , ""));
+	if(a < 1 || a > 7) document.write("잘못 입력하셨습니다"); // || 논리 OR 연산자 
+	else if(isNaN(a))  document.write("숫자가 아닙니다")
+	else {
+		 /* switch문
+		 if / else 문과 마찬가지로 주어진 조건 값에 따라
+		 프로그램이 다른 명령을 수행하도록 하는 조건문 */
+		switch(a) {
+			case 1  : document.write("1 입력하셨습니다".fontcolor("red"));		break;
+			case 2  : document.write("2 입력하셨습니다".fontcolor("orange"));	break;
+			case 3  : document.write("3 입력하셨습니다".fontcolor("yellow"));	break;
+			case 4  : document.write("4 입력하셨습니다".fontcolor("green"));	break;
+			case 5  : document.write("5 입력하셨습니다".fontcolor("blue"));		break;
+			case 6  : document.write("6 입력하셨습니다".fontcolor("navy"));		break;
+			default : document.write("7 입력하셨습니다".fontcolor("violet"));	break;
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>Switch</h1>
+</body>
+</html>

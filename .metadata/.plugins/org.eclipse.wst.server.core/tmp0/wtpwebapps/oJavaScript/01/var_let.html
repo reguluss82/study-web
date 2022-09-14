@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 변수(variable)
+하나의 값을 저장하기 위해 확보한 메모리 공간 자체 또는
+그 메모리 공간을 식별하기 위해 붙인 이름을 말한다. */
+
+	var   varName   = "varName1...";
+	let   letName   = "letName1...";
+	const constName = "constName1...";
+	
+	varName = 100;
+	document.write(varName + "<br>");
+	
+	letName = 300;
+	document.write(letName + "<br>");
+	
+	// 상수(constant) 변수 재선언, 변수 재할당 모두 불가능
+	// 반드시 선언과 초기화를 동시에 진행되어야 한다.
+	constName = 500;
+	document.write(constName + "<br>");
+	
+	// var 재선언 가능
+	var varName = "varName2...";
+	document.write(varName + "<br>");
+	
+	// let 변수 중복 선언이 불가하지만, 재할당은 가능하다.
+		// let letName = "letName2...";
+		// document.write(letName + "<br>");
+	
+/* var 키워드의 문제점
+- 변수 중복 선언 가능하여, 예기치 못한 값을 반환할 수 있다.
+- 함수 레벨 스코프로 인해 함수 외부에서 선언한 변수는 모두 전역 변수로 된다.
+- 변수 선언문 이전에 변수를 참조하면 언제나 undefined를 반환한다. */
+</script>
+</head>
+<body>
+	<h1>Var let</h1>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var man = {name:"홍길동" , 나이:7 , addr:"서울 마포"};
+	/* var man = {"name":"홍길동" , "나이":7 , "addr":"서울 마포"}; */
+	document.write("이름1 : " + man.name    + "<br>"); //이 방법이 제일 많이쓰임
+	document.write("이름2 : " + man["name"] + "<br>");
+	document.write("나이2 : " + man.나이    + "<br>");
+	document.write("나이3 : " + man["나이"] + "<br>");
+	document.write("주소 : "  + man.addr    + "<br>");
+	document.write("이름3 : " + man[name]   + "<br>"); //출력x [""]형식 맞춰주어야함
+	document.write("나이1 : " + man[나이]   + "<br>");
+	
+	/* 객체 Type 개념
+	① 자바스크립트의 기본 타입은 객체(object).
+	② 여러 프로퍼티(property)나 메소드(method)를 
+	   같은 이름으로 묶어놓은 일종의 집합체 */
+</script>
+</head>
+<body>
+	<h1>object01</h1>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.container {
+		width: 960px;
+		margin : 0 auto;
+		background-color: #fff;
+		border: 1px solid #E7E7E7;
+	}
+	header {
+		height: 280px;
+		background-image: url("images/header-bg.png");
+		background-repeat: no-repeat;
+		background-position: left top;
+	}
+	.navi {
+		background: #031a44;
+		margin-top: -17px;
+		width: 960px;
+		height: 60px;
+		color: #fff;
+	}
+	.navi ul {
+		list-style: none;
+		height: 40px;
+		padding-top: 10px;
+		padding-bottom: 5px;
+	}
+	.navi ul li {
+		display: inline;
+		float: left;
+	}
+	.navi a:link, .navi a:visited {
+		padding: 10px 5px 5px 35px;
+		display: block;
+		color: #fff;
+		width: 150px;
+		text-decoration: none;
+	}
+/* 	:link 방문하지 않은 링크
+	:visited 방문한 링크 */
+	.navi a:hover, .navi a:focus {
+		text-shadow: 0px 2px 2px #000;
+		color: #FC0; /* 노랑 */
+	}
+/* 	:hover 웹 요소에 마우스 커서를 올려놓을 때
+	:focus 웹 요소에 초점이 맞추어졌을 때 */
+	hover
+	.navi a:active {
+		color: red;
+	}
+/* 	:active 웹 요소를 활성화(누르고 있을 때)했을 때 */
+/* 	가상클래스(pseudo class)
+	선택하고자 하는 HTML 요소, 아이디, 클래스 선택자에게
+	특별한 상태를 명시할 때 사용 */
+</style>
+</head>
+<body>
+	<div class="container">
+		<header></header>
+		<nav class="navi">
+			<ul>
+				<li><a href="#">이용 안내</a></li>
+				<li><a href="#">객실 소개</a></li>
+				<li><a href="#">예약 방법 및 요금</a></li>
+				<li><a href="#">예약하기</a></li>
+			</ul>
+		</nav>
+	</div>
+</body>
+</html>

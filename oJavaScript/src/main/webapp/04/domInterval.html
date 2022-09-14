@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--
+setInterval()
+지정된 시간 간격마다 지정된 함수를 반복적으로 호출
+window.setInterval(호출할함수, 지연시간);
+이 메소드가 성공적으로 호출되면, 설정된 timeoutID를 반환
+-->
+<script type="text/javascript">
+	function init() {
+		var time = setInterval(
+			function() {
+				var date = new Date();
+				var hour = date.getHours();
+				var min  = date.getMinutes();
+				var sec  = date.getSeconds();
+				document.write(hour + "시 " + min + "분 " + sec + "초" + "<br>");
+				document.clear;
+			} , 1000); // 1초 단위로
+		setTimeout(
+			function() {
+				clearInterval(time);
+			} , 11000); // 11초 동안
+	}
+</script>
+</head>
+<body onload="init()"><!-- body가 로딩이 다 되면 자동으로 init() 실행 -->
+	<h1>setInterval 함수를 사용하는 예제</h1>
+</body>
+</html>

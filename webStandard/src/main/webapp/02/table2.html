@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Table example width, colspan</title>
+<style type="text/css">
+	th {
+		padding: 15px;	/* 셀 테두리와 내용 사이의 간격(패딩) */
+	}
+</style>
+</head>
+<body>
+	<h1>개인연락처</h1>
+	<table border="1">
+		<!-- <colgroup>: 서식 지정을 위해 하나 이상의 열을 그룹으로 묶을 때 사용 -->
+		<colgroup>
+			<!-- <col>: 한 열에 있는 모든 셀에 같은 스타일을 적용 -->
+			<col style="width: 100px;">
+			<col style="width: 300px;">
+			<col style="width: 100px;">
+			<col style="width: 300px;">
+		</colgroup>	
+		<tr>
+			<th>이름</th>
+			<td></td>
+			<td>연락처</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>주소</th>
+			<!-- colspan: 열 병합 /rowspan: 행 병합 -->
+			<td colspan="3"></td>
+		</tr>
+		<tr>
+			<th>자기소개</th>
+			<td colspan="3"></td>
+		</tr>
+	</table>
+</body>
+</html>

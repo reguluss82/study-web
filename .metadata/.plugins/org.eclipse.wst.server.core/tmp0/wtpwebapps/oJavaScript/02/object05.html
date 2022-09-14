@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	1.Array 객체
+		- 자바스크립트에서 배열(array)은 정렬된 값들의 집합으로 정의
+	2.Array.prototype 메소드
+		모든 Array 인스턴스는 Array.prototype으로부터 메소드와 프로퍼티를 상속.
+	*/
+	/* 
+	pop()과 push() 메소드를 사용하면 배열을 스택(stack)이라는 데이터 구조처럼 사용,
+	shift()와 push() 메소드를 사용하면 배열을 큐(queue)라는 데이터 구조처럼 사용
+	*/
+
+	/* length
+	배열의 길이를 반환하는 속성.
+	마지막 원소의 인덱스 값보다 1 큰 수를 반환
+	배열에 속한 원소의 개수와는 의미가 다름 */
+	var arr = [1 , true , "JavaScript"];
+	document.write("arr.length-> " + arr.length + "<br>");
+	document.write("1. arr-> " + arr + "<hr>");
+	
+	/* push()
+	하나 이상의 요소를 배열의 가장 마지막에 추가.
+	원본 배열은 추가한 요소의 수만큼 길이(length)가 늘어나게 되며,
+	요소를 성공적으로 추가하면 배열의 총 길이를 반환 */
+	document.write("arr.push('자바스크립트')-> " + arr.push('자바스크립트') + "<br>");
+	document.write("2. arr-> " + arr + "<br>");
+	document.write("arr.push(2 , '거짓')-> " + arr.push(2 , '거짓') + "<br>");
+	document.write("3. arr-> " + arr + "<hr>");
+	
+	/* pop()
+	배열의 가장 마지막 요소를 제거하고, 그 제거된 요소를 반환.
+	따라서 pop() 메소드를 실행할 때마다 배열의 길이는 1씩 감소 */
+	// 배열의 가장 마지막 요소를 제거
+	document.write("arr.pop()-> " + arr.pop() + "<br>");
+	document.write("arr.length-> " + arr.length + "<br>");
+	document.write("4. arr-> " + arr + "<hr>");
+	
+	/* shift()
+	pop() 메소드와는 달리 배열의 가장 마지막 요소가 아닌 첫 요소를 제거하고,
+	그 제거된 요소를 반환 */
+	// 배열의 첫 요소를 제거
+	document.write("arr.shift()-> " + arr.shift() + "<br>");
+	document.write("arr.length-> " + arr.length + "<br>");
+	document.write("5. arr-> " + arr + "<hr>");
+	
+	/* unshift()
+	하나 이상의 요소를 배열의 가장 앞에 추가.
+	원본 배열은 추가한 요소의 수만큼 길이(length)가 늘어나게 되며,
+	요소를 성공적으로 추가하면 배열의 총 길이를 반환 */
+	// 하나 이상의 요소를 배열의 가장 앞에 추가
+	document.write("arr.unshift('servlet')-> " + arr.unshift('servlet') + "<br>");
+	document.write("arr.length-> " + arr.length + "<br>");
+	document.write("6. arr-> " + arr + "<hr>");
+</script>
+</head>
+<body>
+	<h1>object05</h1>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--
+<input type="file">
+저장 장치의 파일을 하나 혹은 여러 개 선택할 수 있다.
+그 후, 양식을 제출해 서버로 전송하거나,
+File API를 사용한 JavaScript 코드로 조작할 수 있습니다.
+-->
+<!--
+<form> 태그의 enctype 속성
+폼 데이터(form data)가 서버로 제출될 때 해당 데이터가 인코딩되는 방법을 명시
+<form> 요소의 method 속성값이 “post”인 경우에만 사용
+
+속성"multipart/form-data"
+모든 문자를 인코딩하지 않음을 명시함.
+이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함.
+-->
+</head>
+<body>
+	<h2>이미지선택</h2>			      <!-- 멀티미디어 데이터 -->
+	<form action="" method="post" enctype="multipart/form-data">
+		<input type="file" name="file"> <!-- 클릭하면 탐색기가 팝업된다. -->
+	</form>
+</body>
+</html>

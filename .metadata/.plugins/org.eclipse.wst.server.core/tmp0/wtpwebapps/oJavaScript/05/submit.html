@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		if (!frm.id.value) {
+			alert("이름 ?");
+			frm.id.focus();
+			return false;
+		}
+		if (!frm.pass.value) {
+			alert("암호 ?")
+			frm.pass.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<h2>로그인 Get / Post *****</h2>
+<!-- 
+HTTP method
+- Get 
+- http header에 정보를 실어 보냄 , default , Start-line 의 url뒤에 붙음, 전달속도빠름 , 4K가 한계 , 적은 양의 데이터를 전송시 좋음
+   Browser마다 Size 다름
+- Post 
+- http의 body에 정보를 실어 보냄, 데이터 사이즈의 제한이 없음, 보안에 좋음
+-->
+<!-- 	<form action="http://www.daum.net" name="frm" onsubmit="return chk()"> --> 
+<!-- get 방식이 default -->
+	<form action="http://www.naver.com" method="post" name="frm" onsubmit="return chk()">
+		<table border="1" style="background-color: yellow;">
+			<tr>
+				<td>아이디</td>
+				<td><input type="text"     name="id"></td>
+			</tr>
+			<tr>
+				<td>암호</td>
+				<td><input type="password" name="pass"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="확인"></td>
+				<td><input type="reset"  value="취소"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
