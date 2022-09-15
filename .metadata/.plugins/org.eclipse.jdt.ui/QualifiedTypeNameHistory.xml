@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="javax.naming.Context"/>
+    <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
+    <fullyQualifiedTypeName name="javax.sql.DataSource"/>
+    <fullyQualifiedTypeName name="javax.naming.NamingException"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="och11.MemberDao"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.xdevapi.PreparableStatement"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 </qualifiedTypeNameHistroy>

@@ -30,7 +30,14 @@ DBCP를 사용하지 않는다면 JDBC를 통하여 DB에 연결하기 위해서
 Context    init = new InitialContext();
 - InitialContext()는 웹 애플리케이션이 처음 배치될 때 설정되고,
 모든 설정된 엔트리와 자원은 JNDI namespace의 java:comp/env 부분에 놓이게 됨 -->
-
+<!-- 
+JNDI와 DBCP의 전체적인 구성
+① 사용자가 요청.
+② 요청은 Control을 거쳐 JNDI에 등록된 데이터베이스 객체(Type:DataSource)를 검색.
+③ JNDI를 통해 찾은 객체로부터 커넥션을 획득.
+④ 데이터베이스 DML 작업 수행.
+⑤ 데이터베이스 작업이 끝난 후 획득한 커넥션을 반납
+-->
 </head>
 <body>
 	<h2>DBCP 연결</h2>
