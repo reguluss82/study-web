@@ -19,7 +19,7 @@ JSP 및 Servlet 페이지 내에 로직을 기술하여 사용할 수 있지만,
 코드의 간결화 및 모듈화, 유지보수 등의 목적을 위해 별도의 DAO 클래스를 생성하여 사용하는 것이 좋다.
 */
 
-public class MemberDao  {
+public class MemberDao  {//connection module화
 	private Connection getConnection() throws SQLException {
 		Connection conn = null;
 		try {
@@ -44,7 +44,7 @@ public class MemberDao  {
 		int    result = 0;
 		String sql    = "insert into member1 values(? , ? , ? , sysdate)"; //oracle system date
 		try {
-			conn  = getConnection(); //3R Reuse
+			conn  = getConnection(); //connection method 사용 3R-Reuse
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1 , member.getId());//DTO저장된 값 받아 PreparedStatement에 저장

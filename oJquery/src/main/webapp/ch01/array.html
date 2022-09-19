@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var array = [
+			  {name:'중앙정보' , link:'http://www.choongang.co.kr'} // index 0
+			, {name:'다음'     , link:'http://www.daum.net'}		// index 1
+			, {name:'네이버'   , link:'http://www.naver.com'}
+			, {name:'구글'     , link:'http://www.google.com'}
+		];
+		$.each(array , function(index , item) { //향상형 for문 처럼, 종종 사용
+			var out = '<a href="' +item.link+ '">' +item.name+ '</a><p>';
+			document.body.innerHTML +=out; // document의 body에 out
+		});
+	});
+</script>
+<body>
+	<h2>jQuery Array</h2>
+</body>
+</html>

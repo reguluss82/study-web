@@ -47,7 +47,7 @@ VO는 읽기만 가능한 read only 속성을 가져 DTO와의 차이점이 존�
 		else            chk = "fail";
 	} else chk = "fail";
 	session.invalidate(); //현재의 세션 정보들을 모두 제거한다
-	out.print("invalidate() 적용후에도 " + session.getId() + "<br>");
+	out.print("invalidate() 적용후에도 " + session.getId() + "<br>"); //잠시 살아있지만 좀 지나면 종료됨
 	response.sendRedirect("result.jsp?chk=" + chk); //form처럼 chk name에 value넣어 result.jsp에 전달
 %>
 </body>

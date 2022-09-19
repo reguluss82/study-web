@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	em {
+		font-size: 20pt;
+		line-height: 20pt;
+		margin: 20px;
+		color: blue;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	/* selector 중요 */
+	$(document).ready(function() {
+		$('p em').css('background-color' , 'yellow').each(function() {
+			$('.result1').append($(this).text());
+		}); /* this는 p em을   가리키며 each fun을 통해 this의 text를 .result1인 요소에 추가 */
+		$('div > em ').css('background-color' , 'pink').each(function() {
+			$('.result2').append($(this).text());
+		}); /* this는 div>em을 가리키며 each fun을 통해 this의 text를 .result2인 요소에 추가 */
+		console.log("검색된 엘리먼트 개수 : " + $('p em').length);
+		console.log("검색된 엘리먼트 개수 : " + $('div > em').length);
+	});
+</script>
+</head>
+<body>
+	<p>
+		<em> one </em> <em> two </em> <span><em> three </em></span>
+	</p>
+	<div>
+		<em> four </em> <span><em> five </em></span> <em> six </em>
+	</div>
+	<div>
+		<span> ancestor descendant로 검색된 엘리먼트 : </span>
+		<span class="result1"></span>
+	</div>
+	<div>       <!-- '&gt;' = '>'  태그의 <>와 충돌가능성 방지 -->
+		<span> parent &gt; child로 검색된 엘리먼트 : </span>
+		<span class="result2"></span>
+	</div>
+</body>
+</html>
