@@ -10,17 +10,24 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   
-  <filter>
-  	<filter-name>simple-filter</filter-name>
-  	<filter-class>och17.SimpleFilter</filter-class>
+  <filter> <!-- 필터 등록 -->
+  	<filter-name>simple-filter</filter-name> <!-- 필터 이름 -->
+  	<filter-class>och17.SimpleFilter</filter-class> <!-- 필터클래스 이름 -->
   </filter>
-  <filter-mapping>
+  <filter-mapping> <!-- 필터를 적용할 웹 컴포넌트를 지정 -->
   	<filter-name>simple-filter</filter-name>
  	<url-pattern>/sub1/*</url-pattern>
   </filter-mapping>
   
+<!--
+1. 필터를 여러 개의 웹 컴포넌트에 한꺼번에 적용하고자 할 때는 
+   <url-pattern> 서브엘리먼트에 해당 웹 컴포넌트들의 URL 패턴을 쓰면 된다. 
+2. 필터를 같은 웹 애플리케이션 디렉터리 내에 있는 모든 웹 컴포넌트에 적용하려면
+   <url-pattern> 엘리먼트 안에 /*라고 쓰면 된다 -->
   <filter-mapping>
   	<filter-name>simple-filter</filter-name>
  	<url-pattern>/sub2/*</url-pattern>
   </filter-mapping>
 </web-app>
+<!-- 필터를 특정한 한 웹 컴포넌트에만 적용하고자 할 때는 
+<servlet-name> 서브엘리먼트에 해당 웹 컴포넌트의 이름을 지정하면 된다. -->

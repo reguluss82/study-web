@@ -9,6 +9,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!--   MultipartRequest
+- 파일업로드 및 폼요소처리
+- COS 라이브러리에서 가장 핵심적인 역할을 하는 클래스로 파일 업로드 담당
+- MultipartRequest(request, saveDirectory, maxPostSize, encoding, policy)
+  request : MultipartRequest와 연결될 request 객체
+  saveDirectory : 서버 측에 파일이 실질적으로 저장될 경로
+  maxPostSize : 한번에 업로드 할 수 있는 최대 파일 크기
+  encoding : 파일의 인코딩 방식
+  policy : 파일 이름 중복 처리를 위한 인자  -->
 </head>
 <body>
 <% 
@@ -20,7 +29,7 @@
 	String realPath = getServletContext().getRealPath(fileSave);//실제 unix server에 upload
 	System.out.println("realPath->" + realPath);
 	MultipartRequest multi = new MultipartRequest(request , realPath , maxSize , "utf-8" , new DefaultFileRenamePolicy());
-	Enumeration      en    = multi.getFileNames();
+	Enumeration      en    = multi.getFileNames(); //모든 파라미터 이름을 Enumeraton으로 반환
 	while (en.hasMoreElements()) {
 		//input 태그의 속성이 file인 태그의 name 속성값 : 파라미터이름
 		String parameterName = (String)en.nextElement(); //파라미터이름
@@ -41,6 +50,10 @@
 			out.println("크기 : " + file.length() + "<br>");
 		}
 	}
+	/*getParameter(java.lang.String name)
+	스트링으로 주어진 이름에 대한 값을 반환. 
+	값없이 파라미터가 전송되었거나, 해당되는 이름의 파라미터가 전송이 
+	안되었을 경우 null을 반환 */
 	String name = multi.getParameter("name");//request가 아니라 위에 선언한 multi로 getpara
 	String title = multi.getParameter("title");
 	// DTO Setting

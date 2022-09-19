@@ -12,12 +12,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter("/sub2/*")
+@WebFilter("/sub2/*") //annotation sub2
 public class LoginCheck implements Filter {
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
+		/* session
+		 * 2) request 객체로 부터 생성 ① HttpSession 변수 = request.getSession() ② 위의 경우는 세션이 있으면
+		 * 그 세션을 리턴하고 없으면 새로 생성해서 리턴 ③ 만일 생성된 경우에만 리턴받고자 하는 경우는 getSession에 매개변수로 false를
+		 * 전달
+		 * 
+		 * ServletRequest request 에 session 객체가 없어서 HttpServletRequest casting 후 session 사용
+		 */
 		HttpServletRequest  httpServletRequest  = (HttpServletRequest)  request;
 		HttpServletResponse httpServletResponse = (HttpServletResponse) response;
 		// Session 도출 방법

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>servlet 사용 FileUpload</title>
 </head>
 <body>
 	<form action="UploadBoard3" method="post" enctype="multipart/form-data">
