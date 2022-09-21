@@ -28,7 +28,7 @@
 	} else { 
 %>
 	<script type="text/javascript">
-		alert("User 미존재(-1) 넌 누구냐 수상한데 !");
+		alert("User 미존재(-1) 넌 누구냐 수상한데 !!");
 		history.go(-1);
 	</script>
 <%
