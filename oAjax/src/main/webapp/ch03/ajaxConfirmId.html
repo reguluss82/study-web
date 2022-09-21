@@ -29,12 +29,12 @@ AJAX 단점
 <script type="text/javascript">
 	$(function() {
 		$('#chk').click(function() {
-			var id = $('#id').val();// form id 의 값
+			var id = $('#id').val();// form id 의 value
 			var sendData = 'id='+id;
 			alert('sendData->'+sendData);
 			$.ajax({
 				url      : 'confirmId.jsp' ,
-				dataType : 'text' , // dataType 종류 : html,text,xml,json 
+				dataType : 'text' , //data1의 type dataType 종류 : html,text,xml,json 
 				data     : sendData ,
 				success  : function(data1) {
 								$('#msg').html(data1);

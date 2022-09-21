@@ -41,7 +41,7 @@
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$('#menu1').click(function() {
+		$('#menu1').click(function() { //menu1 클릭시 ajax함수 실행
 			$.ajax({
 				url      : 'menu.jsp' , 
 				dataType : 'html'     ,
@@ -55,7 +55,7 @@
 				url      : 'menu.jsp' ,
 				dataType : 'html'     ,
 				success  : function(data) {
-								$('#msg2').html($(data).find('li'));
+								$('#msg2').html($(data).find('li')); // li 태그만 가져온다
 						   }
 			});
 		});

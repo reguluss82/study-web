@@ -9,6 +9,7 @@ public class Member {
 	private String address;
 	private String tel;
 	private Date   reg_date;
+	private String img_path;
 	
 	public String getId() {
 		return id;
@@ -45,5 +46,11 @@ public class Member {
 	}
 	public void setReg_date(Date reg_date) {
 		this.reg_date = reg_date;
+	}
+	public String getImg_path() {
+		return img_path;
+	}
+	public void setImg_path(String img_path) {
+		this.img_path = img_path;
 	}
 }
