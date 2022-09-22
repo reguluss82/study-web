@@ -20,4 +20,5 @@
   <module moduleId="org.eclipse.jst.jee.server:och06" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:och17" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:och05" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:och16" serverId="Tomcat v9.0 Server at localhost"/>
 </modules>

@@ -40,7 +40,7 @@
 			out.println("크기 : " + file.length() + "<br>");
 		}
 	}
-	String id = multi.getParameter("id");
+	String id = multi.getParameter("id"); //일반적인 칼럼도 multi로 getPara
 	String name = multi.getParameter("name");
 	String passwd = multi.getParameter("passwd");
 	String address = multi.getParameter("address");

@@ -173,6 +173,11 @@
 	<!-- maxActive 동시에 사용할 수 있는 최대 커넥션 개수(기본8) -->
 	<!-- maxIdle 커넥션 풀에 반납할 때 최대로 유지될 수 있는 커넥션 개수(기본8) -->
 	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="100" name="jdbc/MySql" password="mysql80" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/scottdb?serverTimezone=UTC" username="root"/>
+</Context><Context docBase="C:\Jsp\jspSrc\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\och16" path="/och16" reloadable="true" source="org.eclipse.jst.jee.server:och16">
+	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="50" maxIdle="10" name="jdbc/OracleDB" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
+	<!-- maxActive 동시에 사용할 수 있는 최대 커넥션 개수(기본8) -->
+	<!-- maxIdle 커넥션 풀에 반납할 때 최대로 유지될 수 있는 커넥션 개수(기본8) -->
+	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="100" name="jdbc/MySql" password="mysql80" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/scottdb?serverTimezone=UTC" username="root"/>
 </Context></Host>
     </Engine>
   </Service>

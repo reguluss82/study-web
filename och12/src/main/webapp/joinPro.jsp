@@ -20,7 +20,6 @@
 		location.href="loginForm.jsp";
 	</script>
 <% 
-
 	} else { %>
 		<script type="text/javascript">
 			alert("헐 실패야 똑바로 해 ~");

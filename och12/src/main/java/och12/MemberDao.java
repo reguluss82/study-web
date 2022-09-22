@@ -39,7 +39,7 @@ public class MemberDao {
 		return conn;
 	}
 	
-	// login data check method
+	// loginPro check method
 	public int check(String id , String passwd) throws SQLException {
 		int result = 1;
 		String sql = "select passwd from member2 where id=?";
@@ -71,11 +71,11 @@ public class MemberDao {
 	public int confirm(String id) throws SQLException {
 		int result = 0;
 		String sql = "select id from member2 where id=?";
-		Connection conn = null;
+		Connection        conn  = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		ResultSet         rs    = null;
 		try {
-			conn = getConnection();
+			conn  = getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -116,9 +116,35 @@ public class MemberDao {
 		return result;
 	}
 	
+	// joinPro3 img insert method
+	public int insert3(Member member) throws SQLException {
+		int result = 0;
+		String sql = "insert into member2 values(? , ? , ? , ? , ? , sysdate , ?)";
+		Connection        conn  = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn  = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1 , member.getId());
+			pstmt.setString(2 , member.getPasswd());
+			pstmt.setString(3 , member.getName());
+			pstmt.setString(4 , member.getAddress());
+			pstmt.setString(5 , member.getTel());
+			pstmt.setString(6 , member.getImg_path());
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (pstmt != null) pstmt.close();
+			if (conn  != null) conn.close();
+		}
+		return result;
+	}
+	
 	// 회원명단 memberList list method
 	public List<Member> list() throws SQLException {
-		List<Member> list = new ArrayList<Member>();
+		List<Member> list = new ArrayList<Member>(); // List 자식 ArrayList , List : interface 
 		String sql = "select * from member2";
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
@@ -126,15 +152,15 @@ public class MemberDao {
 		try {
 			conn  = getConnection();
 			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
+			rs    = pstmt.executeQuery();
 			if (rs.next()) {
 				do {
 					Member member = new Member();
-					member.setId(rs.getString(1));
-					member.setPasswd(rs.getString(2));
-					member.setName(rs.getString(3));
-					member.setAddress(rs.getString(4));
-					member.setTel(rs.getString(5));
+					member.setId      (rs.getString(1));
+					member.setPasswd  (rs.getString(2));
+					member.setName    (rs.getString(3));
+					member.setAddress (rs.getString(4));
+					member.setTel     (rs.getString(5));
 					member.setReg_date(rs.getDate(6));
 					list.add(member);
 				} while (rs.next());
@@ -163,12 +189,13 @@ public class MemberDao {
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				member.setId(rs.getString(1));
-				member.setPasswd(rs.getString(2));
-				member.setName(rs.getString(3));
-				member.setAddress(rs.getString(4));
-				member.setTel(rs.getString(5));
+				member.setId      (rs.getString(1));
+				member.setPasswd  (rs.getString(2));
+				member.setName    (rs.getString(3));
+				member.setAddress (rs.getString(4));
+				member.setTel     (rs.getString(5));
 				member.setReg_date(rs.getDate(6));
+				member.setImg_path(rs.getString(7));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -188,11 +215,11 @@ public class MemberDao {
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, member.getPasswd());
-			pstmt.setString(2, member.getName());
-			pstmt.setString(3, member.getAddress());
-			pstmt.setString(4, member.getTel());
-			pstmt.setString(5, member.getId());
+			pstmt.setString(1 , member.getPasswd());
+			pstmt.setString(2 , member.getName());
+			pstmt.setString(3 , member.getAddress());
+			pstmt.setString(4 , member.getTel());
+			pstmt.setString(5 , member.getId());
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -206,15 +233,15 @@ public class MemberDao {
 	// deletePro 회원정보삭제 delete method
 	public int delete(String id , String passwd) throws SQLException {
 		int result = 0;
-		result = check(id, passwd);
+		result = check(id , passwd);
 		if (result != 1) return result;
 		String sql = "delete from member2 where id=?";
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
 		try {
-			conn = getConnection();
+			conn  = getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
+			pstmt.setString(1 , id);
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
