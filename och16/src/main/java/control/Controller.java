@@ -24,7 +24,7 @@ import service.CommandProcess;
 //  @WebServlet("/Controller")
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private Map<String, Object> commandMap = new HashMap<String, Object>();
+    private Map<String, Object> commandMap = new HashMap<String, Object>(); //Controller class내에서 멤버변수
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -42,17 +42,15 @@ public class Controller extends HttpServlet {
 		//     props-> /WEB-INF/command.properties
 		System.out.println("1. init String props=> " + props); // /ch16/com
 		
-		Properties pr = new Properties();
-		FileInputStream f = null;
-		
-
+		Properties      pr = new Properties();
+		FileInputStream f  = null;
 		
 		try {
 			String configFilePath = config.getServletContext().getRealPath(props);
 			System.out.println("2. init Stirng configFilePath->" + configFilePath); 
-			f = new FileInputStream(configFilePath);
+			f = new FileInputStream(configFilePath); // 실제경로상 파일을 f에 파일로 만든다
 			
-			pr.load(f); //메모리로 올린다
+			pr.load(f); //f 파일을 메모리에 올린다
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -66,7 +64,7 @@ public class Controller extends HttpServlet {
 				} catch (IOException ex) {
 				}
 		}
-		Iterator ketIter = pr.keySet().iterator(); //keySet
+		Iterator ketIter = pr.keySet().iterator(); //집합형 변수 , buffer에 순서대로 /list.do , /content.do
 		
 		while(ketIter.hasNext()) {
 			String command = (String) ketIter.next();
@@ -76,8 +74,8 @@ public class Controller extends HttpServlet {
 			
 			try {
 				// ListAction la = new ListAction();
-				Class commandClass = Class.forName(className);
-				Object commandInstance = commandClass.newInstance();
+				Class commandClass = Class.forName(className); // className을 class로 만들어준다.
+				Object commandInstance = commandClass.newInstance(); // instance 객체 생성
 				//             list.do, service.ListAction(instance)
 				commandMap.put(command, commandInstance);
 			} catch (Exception e) {
@@ -104,18 +102,18 @@ public class Controller extends HttpServlet {
 	}
 	protected void requestServletPro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String view = null;
-		CommandProcess com = null;
-		String command = request.getRequestURI();
+		String         view = null;
+		CommandProcess com  = null;
+		String command = request.getRequestURI(); //context /och16
 		System.out.println("1.requestServletPro command => " + command); // /och16.list.do
-		command = command.substring(request.getContextPath().length());
+		command = command.substring(request.getContextPath().length()); //contextpath /och16 length -> 6
 		System.out.println("2.requestServletPro command substring => " + command);
 		
 		try {
-			com = (CommandProcess) commandMap.get(command);
+			com = (CommandProcess) commandMap.get(command); //com <= service.ListAction instance
 			System.out.println("3.requestServletPro command => " + command); // /ch16/com
 			System.out.println("4.requestServletPro com => " + com); // /ch16/com
-			//     com --> service.ListAction@
+			//     com --> service.ListAction@12611de0
 			view = com.requestPro(request, response);
 			System.out.println("5.requestServletPro view => " + view); // /ch16/com			
 		} catch (Exception e) {
@@ -123,6 +121,7 @@ public class Controller extends HttpServlet {
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+		System.out.println("dispatcher view -> " + view);
 		dispatcher.forward(request, response);
 		
 	}
