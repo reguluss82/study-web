@@ -16,14 +16,15 @@ public class ContentAction implements CommandProcess {
 			throws ServletException, IOException {
 		System.out.println("ContentActions Service start...");
 		// 1. num , pageNum
-		int num = Integer.parseInt(request.getParameter("num"));
+		int    num     = Integer.parseInt(request.getParameter("num"));
 		String pageNum = request.getParameter("pageNum");
 		try {
 			// 2. BoardDao bd Instance
 			BoardDao bd = BoardDao.getInstance();
-			
+			// 3. num의 readCount 증가
+			bd.readCount(num);
 			// 4. Board board = bd.select(num);
-			Board board = bd.select(num); // hw
+			Board board = bd.select(num);
 			
 			// 5. request 객체에 num , pageNum , board
 			request.setAttribute("num"     , num);

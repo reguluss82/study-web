@@ -21,7 +21,7 @@ import service.CommandProcess;
 /**
  * Servlet implementation class Controller
  */
-//  @WebServlet("/Controller")
+//  @WebServlet("/Controller") xml로 setting
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private Map<String, Object> commandMap = new HashMap<String, Object>(); //Controller class내에서 멤버변수

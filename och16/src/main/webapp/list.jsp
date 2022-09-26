@@ -18,6 +18,11 @@
 	<h1>게시판</h1>
 	<table>
 		<tr>
+		<td><a href="writeForm.do">글쓰기</a></td>
+		</tr>
+	</table>
+	<table>
+		<tr>
 			<th>번호</th> <th>제목</th> <th>작성자</th> <th>이메일</th> <th>IP</th> <th>작성일</th> <th>조회수</th>
 		</tr>
 		<c:if test="${totCnt > 0 }">

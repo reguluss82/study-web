@@ -42,11 +42,11 @@
 		<tr>
 			<td colspan="2">
 				<input type="button" value="수정"
-						onclick="location.href='updateForm.do?num${board.num}&pageNum=${pageNum }'">
+						onclick="location.href='updateForm.do?num=${board.num}&pageNum=${pageNum }'">
 				<input type="button" value="답변작성"
-						onclick="location.href='writeForm.do?num${board.num}&pageNum=${pageNum }'">
+						onclick="location.href='writeForm.do?num=${board.num}&pageNum=${pageNum }'">
 				<input type="button" value="삭제"
-						onclick="location.href='deleteForm.do?num${board.num}&pageNum=${pageNum }'">
+						onclick="location.href='deleteForm.do?num=${board.num}&pageNum=${pageNum }'">
 				<input type="button" value="목록"
 						onclick="location.href='list.do?pageNum=${pageNum }'">
 			</td>
