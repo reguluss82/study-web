@@ -98,9 +98,9 @@ public class BoardDao {
 	public Board select(int num) throws SQLException {
 		Board board = new Board();
 		String sql = "select * from board where num="+num;
-		Connection        conn  = null;
-		Statement         stmt  = null;
-		ResultSet         rs    = null;
+		Connection conn  = null;
+		Statement  stmt  = null;
+		ResultSet  rs    = null;
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
@@ -122,14 +122,14 @@ public class BoardDao {
 			System.out.println(e.getMessage());
 		} finally {
 			if (rs    != null) rs.close(); 
-			if (stmt != null) stmt.close(); 
+			if (stmt  != null) stmt.close(); 
 			if (conn  != null) conn.close(); 
 		}
 		return board;
 	}
 	
 	public void readCount(int num) throws SQLException {
-		Connection conn = null;
+		Connection        conn  = null;
 		PreparedStatement pstmt = null;
 		String sql="update board set readcount=readcount+1 where num=?";
 		try {
@@ -160,7 +160,7 @@ public class BoardDao {
 			pstmt.setString(4, board.getPasswd());
 			pstmt.setString(5, board.getContent());
 			pstmt.setString(6, board.getIp());
-			pstmt.setInt(7, board.getNum());
+			pstmt.setInt   (7, board.getNum());
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -183,7 +183,7 @@ public class BoardDao {
 		try {
 			conn  = getConnection();
 			pstmt = conn.prepareStatement(sql1);
-			rs = pstmt.executeQuery();
+			rs    = pstmt.executeQuery();
 			rs.next();
 			// key인 num 1씩 증가, mysql auto_increment 또는 oracle sequence
 			// sequence를 사용  : values(시퀀스명(board_seq).nextval,?,?...)
@@ -201,7 +201,7 @@ public class BoardDao {
 				pstmt.setInt(2, board.getRe_step());
 				pstmt.executeUpdate();
 				pstmt.close();
-				// 댓글 관련 정보
+				//새로 다는 댓글 관련 정보
 				board.setRe_step (board.getRe_step()  + 1);
 				board.setRe_level(board.getRe_level() + 1);
 			}
@@ -223,7 +223,40 @@ public class BoardDao {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		} finally {
-			if (rs != null) rs.close(); 
+			if (rs    != null) rs.close(); 
+			if (pstmt != null) pstmt.close(); 
+			if (conn  != null) conn.close(); 
+		}
+		return result;
+	}
+	
+	public int delete(int num , String passwd) throws SQLException {
+		int    result = 0;
+		String sql1   = "select passwd from board where num=?";
+		String sql    = "delete board where num = ?";
+		Connection        conn  = null;
+		PreparedStatement pstmt = null;
+		ResultSet         rs    = null;
+		
+		try {
+			String dbPasswd = "";
+			conn  = getConnection();
+			pstmt = conn.prepareStatement(sql1);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				dbPasswd = rs.getString(1);
+				if (dbPasswd.equals(passwd)) {
+					rs.close();
+					pstmt.close();
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setInt(1, num);
+					result = pstmt.executeUpdate();
+				} else result = 0;
+			} else result = -1;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
 			if (pstmt != null) pstmt.close(); 
 			if (conn  != null) conn.close(); 
 		}

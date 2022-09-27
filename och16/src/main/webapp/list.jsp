@@ -13,6 +13,27 @@
 		width: 100%;
 	}
 </style>
+<% 
+	String context = request.getContextPath();
+%>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	function getDeptName(v_num) {
+		alert("getDeptNAme v_num->"+v_num);
+		$.ajax({
+			url      : "<%=context%>/ajaxGetDeptName.do" ,
+			data     : {num : v_num} ,       /* 파라미터 */
+			dataType : 'text' ,
+			success  : function(data) { /* ajaxGetDeptName.do 의 결과값이 text형식으로 data에 간다 */
+							alert(".ajax Data"+data);
+							/* input Tag value속성*/
+							$('#deptName').val(data);
+							/* span Tag value속성 없음 -> html로*/
+							$('#msg').html(data);
+					   }
+		});
+	}
+</script>
 </head>
 <body>
 	<h1>게시판</h1>
@@ -32,7 +53,7 @@
 					<td class="left" width="200">
 						<c:set var="numbering" value="1"/>
 						<c:if test="${board.readcount > 20 }">
-							<img alt="" src="images/hot.gif" onmouseover="${board.num}">
+							<img alt="" src="images/hot.gif" onmouseover="getDeptName(${board.num})">
 						</c:if>
 						<c:if test="${board.re_level > 0 }">
 							<img alt="" src="images/level.gif" width="${board.re_level * 10 }">
@@ -68,6 +89,9 @@
 			<a href="list.do?pageNum=${startPage + blockSize }">[다음]</a>
 		</c:if>
 	</div>
+	
+	Ajax deptName 결과 :  <input type="text" id="deptName" readonly="readonly"><p>
+    Message            :  <span id="msg"></span><p>
 
 </body>
 </html>

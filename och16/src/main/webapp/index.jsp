@@ -8,7 +8,7 @@
 </head>
 <body>
 <script type="text/javascript">
-	location.href = "list.do"; /* URL */
+	location.href = "test.do"; /* URL */
 </script>
 </body>
 </html>

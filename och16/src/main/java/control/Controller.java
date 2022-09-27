@@ -3,6 +3,7 @@ package control;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -120,10 +121,20 @@ public class Controller extends HttpServlet {
 			throw new ServletException(e);
 		}
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		System.out.println("dispatcher view -> " + view);
-		dispatcher.forward(request, response);
-		
+		// Ajax String를 포함하고 있으면
+		if (command.contains("ajaxGet")) {
+			System.out.println("ajaxGet String->"+command);
+			String writer = (String) request.getAttribute("writer");
+			PrintWriter pw = response.getWriter();
+			pw.write(writer); // writer -> ajax의 data 로 보내짐
+			pw.flush();
+			
+		} else {
+			// 일반적인 경우 화면 이동
+			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+			System.out.println("dispatcher view -> " + view);
+			dispatcher.forward(request, response);
+		}
 	}
 
 }

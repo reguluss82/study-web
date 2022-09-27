@@ -9,26 +9,26 @@
 </head>
 <body>
 	<form action="updatePro.do" method="post">
-		<input type="hidden" name="num" value="${board.num }"> <!-- pk 수정하지 않는다. db무결성 문제가능성 -->
+		<input type="hidden" name="num"     value="${board.num }"> <!-- pk 수정하지 않는다. db무결성 문제가능성 -->
 		<input type="hidden" name="pageNum" value="${pageNum }">
 		<table border="1">
 			<caption><h2>게시판 수정</h2></caption>
-			<tr><td>번호</td><td>${board.num }</td></tr>
+			<tr><td>번호</td><td>${board.num }</td></tr><!-- pk 수정하지 않는다. db무결성 문제가능성 -->
 			<tr>
 				<td>제목</td>
-				<td><input type="text" name="subject" required="required" value="${board.subject }"></td>
+				<td><input type="text"     name="subject" required="required" value="${board.subject }"></td>
 			</tr>
 			<tr>
 				<td>작성자</td>
-				<td><input type="text" name="writer" required="required" value="${board.writer }"></td>
+				<td><input type="text"     name="writer"  required="required" value="${board.writer }"></td>
 			</tr>
 			<tr>
 				<td>이메일</td>
-				<td><input type="email" name="email" required="required" value="${board.email }"></td>
+				<td><input type="email"    name="email"   required="required" value="${board.email }"></td>
 			</tr>
 			<tr>
 				<td>암호</td>
-				<td><input type="password" name="passwd" required="required" value="${board.passwd }"></td>
+				<td><input type="password" name="passwd"  required="required" value="${board.passwd }"></td>
 			</tr>
 			<tr>
 				<td>내용</td>

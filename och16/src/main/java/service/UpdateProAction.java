@@ -14,11 +14,11 @@ public class UpdateProAction implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// 1. num , pageNum , writer , email , subject , passwd , content Get
+		// 1. num , pageNum , writer , email , subject , passwd , content Get(2에서 받으면서 바로 set)
 		request.setCharacterEncoding("utf-8");
 		String pageNum = request.getParameter("pageNum");
 
-		// 2. Board board Value Setting
+		// 2. Board board Value Getting & Setting
 		Board board = new Board();
 		board.setNum(Integer.parseInt(request.getParameter("num")));
 		board.setWriter(request.getParameter("writer"));
